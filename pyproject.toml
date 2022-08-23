@@ -1,19 +1,19 @@
 # https://python-poetry.org/docs/dependency-specification/
 [tool.poetry]
-name = "GamestonkTerminal"
-version = "0.1.0"
+name = "OpenBBTerminal"
+version = "1.7.0"
 description = ""
 authors = ["Didier Rodrigues Lopes"]
 packages = [
-    { include = "gamestonk_terminal" },
+    { include = "openbb_terminal" },
 ]
 
 [tool.poetry.scripts]
-gst = 'terminal:terminal'
+openbb = 'terminal:terminal'
 
 [tool.poetry.dependencies]
-python = "^3.6.8"
-pandas = "^1.1.5,<1.2"
+python = "^3.8,<3.11"
+scipy = "1.8.1"
 iso8601 = "^0.1.14"
 FundamentalAnalysis = "^0.2.6"
 requests = "^2.25.1"
@@ -22,85 +22,112 @@ finviz = "^1.3.4"
 bs4 = "^0.0.1"
 rapidfuzz = "^1.1.1"
 yfinance = "^0.1.63"
-pandas-ta = "^0.2.23b0"
-prettytable = "^2.0.0"
 psaw = "^0.0.12"
 praw = "^7.1.4"
 Quandl = "^3.6.0"
 pytrends = "^4.7.3"
-timeseries-cv = "0.1.4"
 matplotlib = "^3.3.3"
-plotly = "^4.14.3"
-colorama = "^0.4.4"
+plotly = "^5.0.0"
 papermill = "^2.3.2"
-pmdarima = {version = "1.8.0", optional = false}
-holidays = "^0.10"
 prompt-toolkit = "^3.0.16"
 jupyter = "^1.0.0"
+jupyterlab = "^3.2.4"
 mplfinance = "^0.12.7-alpha.7"
 seaborn = "^0.11.0"
-scipy = "~1.5.4"
 fredapi = "^0.4.3"
 screeninfo = "^0.6.7"
-numpy = "~1.19.5,<1.20"
-pyrsistent = "~0.14.11"
-regex = "~2020.11.13"
-h5py = "3.1"
 robin-stocks = "^2.0.3"
-termcolor = "^1.1.0"
-alpaca-trade-api = "^1.0.1"
 pyally = "^1.1.2"
-pycoingecko = "^1.4.0"
+pycoingecko = "^2.2.0"
 detecta = "^0.0.5"
 tradingview-ta = "^3.2.3"
-finvizfinance = "^0.9.3"
-Pillow = "^8.2.0"
-statsmodels = "^0.12.2"
-tabulate = "^0.8.9"
+finvizfinance = "^0.14.0"
+statsmodels = "^0.13"
 pyportfolioopt = "^1.4.1"
-selenium = "^3.141.0"
+selenium = "^4.1.3"
 python-coinmarketcap = "^0.2"
 oandapyV20 = "^0.6.3"
 valinvest = "^0.0.2"
 bt = "^0.2.9"
-python-binance = "^1.0.1"
-grpcio = "1.34.0"
-pyupgrade = "2.18.2"
-cvxpy = "1.1.12"
-tensorflow = {version = "2.5.0", optional = true}
-jupyter-client = "6.1.12"
 vaderSentiment = "3.3.2"
-degiro-connector = "1.0.0"
-mypy = "^0.901"
+mypy = "^0.930"
 GitPython = "^3.1.17"
-fear-greed-index = "^0.1.3"
 pyEX = "^0.5.0"
-charset-normalizer = "2.0.1"
+sentiment-investor = "^2.0.0"
+fred = "^3.1"
+financedatabase = "1.0.2"
+reportlab = "^3.6.2"
+holidays = "^0.11.3"
+degiro-connector = "^2.0.3"
+python-binance = "^1.0.15"
+python-i18n = "^0.3.9"
+thepassiveinvestor = "^1.0.10"
+pymongo = "^3.11"
+pandas-ta = "^0.3.14-beta.0"
+pmdarima = "^1.8.4"
+pyrsistent = "^0.18.0"
+openpyxl = "^3.0.9"
+jsonschema = "^3.2.0"
+pandas = "^1.3.5"
+pandas-market-calendars = "~3.2"
+ipympl = "^0.8.2"
+voila = "^0.3.0"
+rich = "^10.16.1"
+investpy = "^1.0.7"
+dnspython = "^2.1.0"
+numpy = "^1.21.2"
+python-dotenv = "^0.19.2"
+Pygments = "^2.11.2"
+ascii-magic = "^1.6"
+squarify = "^0.4.3"
+finnhub-python = "^2.4.10"
+linearmodels = "^4.25"
+black = "^22.1"
+ipywidgets = "^7.7.0"
+Jinja2 = "^3.0.3"
+Riskfolio-Lib = "^3.1.1"
+ccxt = "^1.91.60"
+html5lib = "^1.1"
+feedparser = "^6.0.10"
+tensorflow = {version = "^2.8.2", optional = true}
+tensorflow-macos = {version = "^2.9.2", optional = true}
+tensorflow-metal = {version = "^0.5.0", optional = true}
+pyinstaller = {version = "^4.10", optional = true}
+jupyterlab-code-formatter = {version = "^1.4.10", optional = true}
+jupyterlab-lsp = {version = "^3.10.1", optional = true}
+jedi-language-server = {version = "^0.35.1", optional = true}
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
-pylint = "^2.7.2"
+pylint = "2.13.9"
 flake8 = "^3.9.0"
-black = "21.5b2"
-mypy = "^0.901"
+mypy = "^0.930"
 mock = "^4.0.3"
 codespell = "^2.0.0"
 pyupgrade = "^2.11.0"
-Sphinx = "4.1.1"
+sphinx = "^4.5.0"
+myst-parser = "^0.15.2"
+black = {extras = ["jupyter"], version = "^22.1.0"}
+bandit = "^1.7.0"
+coverage = ">=5.5"
+vcrpy = "^4.1.1"
+pytest-mock = "^3.6.1"
+pytest-recording = "^0.12.0"
+types-pytz = "^2021.3.1"
+types-requests = "^2.26.0"
+types-PyYAML = "^6.0.1"
+types-python-dateutil = "^2.8.3"
+types-setuptools = "^57.4.7"
+pre-commit = "^2.16.0"
+pytest-cov = "^3.0.0"
+types-six = "^1.16.12"
 
 [tool.poetry.extras]
-prediction = ["tensorflow", "pmdarima", "transformers", "flair", "torch"]
+prediction = ["tensorflow", "u8darts"]
+prediction-m1-mac = ["tensorflow-macos", "tensorflow-metal"]
+jupyterlab = ["jupyterlab-code-formatter", "jupyterlab-lsp", "jedi-language-server"]
+installer = ["pyinstaller"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-# Notes for developers:
-# 1. numpy >= 1.20.0 sometimes has issues with tensorflow=2.4.1
-# 2. The following packages dropped support for python<3.7:
-#    pandas >= 1.2.0
-#    numpy >= 1.20.0
-#    scipy >= 1.6.0
-# 3. The following often cause poetry to misbehave:
-#    pyrsistent >= 0.17
-#    regex >= 2021

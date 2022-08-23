@@ -1,9 +1,10 @@
 name: Mac OS X Full Clean Build with ML
 env:
+  OPENBB_ENABLE_QUICK_EXIT: true
+  OPENBB_LOG_COLLECTION: false
+  OPENBB_USE_ION: false
+  OPENBB_USE_PROMPT_TOOLKIT: false
   PIP_DEFAULT_TIMEOUT: 100
-  GTFF_USE_PROMPT_TOOLKIT: false
-  GTFF_USE_ION: false
-  GTFF_ENABLE_QUICK_EXIT: true
   PYTHONNOUSERSITE: 1
 on:
   push:
@@ -13,10 +14,10 @@ on:
     inputs:
       comments:
         required: true
-        description: 'Test scenario tags'
+        description: "Test scenario tags"
 jobs:
   macos-conda:
-    name: MacOS-latest, Conda-latest,  Python 3.8
+    name: MacOS-latest, Conda-latest,  Python 3.9
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -35,17 +36,17 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/conda_pkgs_dir
-          key: conda-macos-3-8-${{ hashFiles('build/conda/conda-3-8-env-full.yaml') }}
+          key: conda-macos-3-9-${{ hashFiles('build/conda/conda-3-9-env.yaml') }}
 
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          miniconda-version: 'latest'
+          miniconda-version: "latest"
           auto-update-conda: true
           channels: conda-forge,defaults
           show-channel-urls: true
           channel-priority: flexible
-          environment-file: build/conda/conda-3-8-env-full.yaml
+          environment-file: build/conda/conda-3-9-env.yaml
           activate-environment: testing
           # Needed for caching
           use-only-tar-bz2: true
@@ -60,9 +61,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
-          key: macos-3-8-pip-${{ hashFiles('**/requirements.txt') }}
+          key: macos-3-9-pip-${{ hashFiles('**/requirements-full.txt') }}
           restore-keys: |
             macos-pip-
+
+      - name: Uninstall Brotlipy
+        shell: bash -l {0}
+        run: |
+          conda remove brotlipy -y
 
       - name: Install dependencies (Bash)
         shell: bash -l {0}

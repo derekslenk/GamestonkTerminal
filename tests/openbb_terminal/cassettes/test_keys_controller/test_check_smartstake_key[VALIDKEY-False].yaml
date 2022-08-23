@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://prod.smartstakeapi.com/listData?app=TERRA&type=history&dayCount=30&key=VALIDKEY&token=VALIDKEY
+  response:
+    body:
+      string: '{"errors": "DENIED"}'
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 729210182c2668c1-BUD
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 11 Jul 2022 14:00:00 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      NEL:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kMU1UZsZ%2BpBKYn%2B5QcxTAOVvW0F0RFFcg5koaZRMz2ag3TOgoFD9MfS5Y7yx7dqw%2FQMfagq5GJTpE1XDgfTTipfdtyN4U7gUn5hcq04%2Fnq2GP3jV9oGFL5dzKQINciMPQWgIILEjW08%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      x-amz-apigw-id:
+      - VGvzGEC5IAMF0QA=
+      x-amzn-requestid:
+      - 90325c06-e4a2-486a-aad4-aab2edf98ad2
+      x-amzn-trace-id:
+      - Root=1-62cc2ce0-651a49d709e124bb24133457;Sampled=0
+    status:
+      code: 200
+      message: OK
+version: 1

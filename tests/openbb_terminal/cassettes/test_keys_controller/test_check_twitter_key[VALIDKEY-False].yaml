@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - Bearer VALIDKEY
+    method: GET
+    uri: https://api.twitter.com/2/tweets/search/recent?query=%28%5C%24AAPL%29+%28lang%3Aen%29&max_results=10&tweet.fields=created_at%2Clang
+  response:
+    body:
+      string: "{\n  \"title\": \"Unauthorized\",\n  \"type\": \"about:blank\",\n  \"status\":
+        401,\n  \"detail\": \"Unauthorized\"\n}"
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0
+      content-length:
+      - '99'
+      content-type:
+      - application/problem+json
+      date:
+      - Mon, 11 Jul 2022 13:59:49 GMT
+      server:
+      - tsa_o
+      x-connection-hash:
+      - 4ccfde9a490318a5446cd4d4497d2ce1cdb3db4467bcfdc4bb7d98ad9d88747a
+      x-response-time:
+      - '106'
+    status:
+      code: 401
+      message: Unauthorized
+version: 1
